@@ -133,3 +133,7 @@ eg
 Valid effects are solid, pulse, flash, blip, rainbow.
 
 The colour off just sets the RGB values to 0,0,0
+
+### Case
+
+I'm pondering building a little enclosure with an acrylic segment being placed over the led so that a nameplate can be engraved with the machine name/id.
