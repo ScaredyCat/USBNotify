@@ -1,0 +1,9 @@
+# 99-hid-led.rules
+# Place in /etc/udev/rules.d/ then run:
+#   sudo udevadm control --reload-rules && sudo udevadm trigger
+#
+# This grants read/write access to the HID LED device for all users
+# in the 'plugdev' group (most desktop Linux distros add your user here).
+
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1ed5", ATTRS{idProduct}=="aced", MODE="0666"
+
