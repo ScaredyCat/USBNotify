@@ -78,6 +78,30 @@ Remove and plug in your device again, you should no longer need to sudo to contr
 
 ### Mac users need hidapitester
 
+MacOS doesn't give access to hidraw directly so if you want to use this with a mac you need to install hidapitester
+
+```
+brew install hidapi
+```
+
+```
+git clone https://github.com/libusb/hidapi
+git clone https://github.com/todbot/hidapitester
+
+```
+
+```
+cd hidapitester
+make
+
+```
+move it
+
+```
+sudo mv hidapitester /usr/local/bin/
+
+```
+
 
 Example script for control in support  directory also linux udev rule.
 
