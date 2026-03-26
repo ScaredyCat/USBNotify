@@ -3,6 +3,8 @@
 
 I have a homelab that consists of similar looking HP Elitedesk machines and wanted a simple way to identify which machine was which. Super cheap really basic method to identify which machine I want to do something with from the shell. Also useful if you need to give instructions to another person remotely - you can identify which machine they need to work on.
 
+I purchased a handful of the Waveshare RP2040-One devices and put this together.
+
 Each device is controlled based on its serial number so you can have multiple devices plugged in and control each one specifically.
 
 ### After you've installed the prerequisites
