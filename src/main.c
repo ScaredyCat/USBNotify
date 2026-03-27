@@ -15,6 +15,13 @@
 #define SETTINGS_FLASH_OFFSET (PICO_FLASH_SIZE_BYTES - FLASH_SECTOR_SIZE)
 #define SETTINGS_MAGIC        0xDEADBEEF
 
+#define SOLID_EFFECT 0
+#define PULSE_EFFECT 1
+#define BLINK_EFFECT 2
+#define FASTBLINK_EFFECT 3
+#define RAINBOW_EFFECT 4
+
+
 typedef struct {
     uint32_t magic;
     uint8_t  r, g, b;
@@ -140,20 +147,20 @@ int main() {
         uint32_t now = time_us_32();
         if ((int32_t)(now - next_update_us) < 0) continue;
 
-        if (mode == 1) {
+        if (mode == PULSE_EFFECT) {
             (step++ % 40 < 20) ? put_pixel_scaled(r_val, g_val, b_val, 1.0f) : put_pixel_scaled(0,0,0,0);
             next_update_us += 20000;
         }
-        else if (mode == 2) {
+        else if (mode == BLINK_EFFECT) {
             float intensity = (sinf(step++ * 0.05f) + 1.0f) / 2.0f;
             put_pixel_scaled(r_val, g_val, b_val, intensity);
             next_update_us += 30000;
         }
-        else if (mode == 3) {
+        else if (mode == FASTBLINK_EFFECT) {
             (step++ % 20 < 10) ? put_pixel_scaled(r_val, g_val, b_val, 1.0f) : put_pixel_scaled(0,0,0,0);
             next_update_us += 10000;
         }
-        else if (mode == 4) {
+        else if (mode == RAINBOW_EFFECT) {
             float angle = step++ * 0.05f;
             uint8_t r = (uint8_t)((sinf(angle)           + 1.0f) * 127.5f);
             uint8_t g = (uint8_t)((sinf(angle + 2.0944f) + 1.0f) * 127.5f);
@@ -162,6 +169,7 @@ int main() {
             next_update_us += 20000;
         }
         else {
+            // SOLID_EFFECT
             put_pixel_scaled(r_val, g_val, b_val, 1.0f);
             next_update_us += 10000;
         }
