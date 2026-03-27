@@ -134,6 +134,23 @@ Valid effects are solid, pulse, flash, blip, rainbow.
 
 The colour off just sets the RGB values to 0,0,0
 
+### Save values
+
+You can save the colour, effect and brightness to the device so that it will start up with those options. 
+
+```
+./example.sh <DEVICE-SERIAL-NUMBER> <COLOUR> <EFFECT> <BRIGHTNESS> --save
+```
+eg
+
+```
+./example.sh DE64A876CF551522 red pulse 10 --save
+
+```
+
+If you save your settings you should see the LED flash white 4 times and then return to your saved settings. On boot if you have no saved settings the LED with flash blue once, then red. If you have saved settings the LED will flash blue once and then green twice before applying those settings.
+
+
 ### Case
 
 I'm pondering building a little enclosure with an acrylic segment being placed over the led so that a nameplate can be engraved with the machine name/id.
