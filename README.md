@@ -134,6 +134,8 @@ Valid effects are solid, pulse, flash, blip, rainbow.
 
 The colour off just sets the RGB values to 0,0,0
 
+The script is not a requirement you can write directly to the hidraw device yourself if you prefer.
+
 ### Save values
 
 You can save the colour, effect and brightness to the device so that it will start up with those options. 
