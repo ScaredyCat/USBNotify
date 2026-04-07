@@ -16,7 +16,7 @@ sudo apt install -y git cmake gcc-arm-none-eabi libnewlib-arm-none-eabi \
 ```
 
 
-***You might need to remove you os version of arm gcc. I built this on Ubuntu 24.04 LTS and had to use the arm site toolchain.***
+***You might need to remove your os version of arm gcc. I built this on Ubuntu 24.04 LTS and had to use the arm site toolchain.***
 
 ```
 sudo apt remove gcc-arm-none-eabi binutils-arm-none-eabi
