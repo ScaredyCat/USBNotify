@@ -85,6 +85,11 @@ usage() {
     echo "  $0 ABC123 green flash 100 --save"
 }
 
+if [[ $# -eq 0 ]]; then
+    usage
+    exit 1
+fi
+
 case "$1" in
     list) list_devices ;;
     help|--help|-h) usage ;;
